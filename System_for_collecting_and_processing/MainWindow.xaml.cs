@@ -23,5 +23,9 @@ namespace System_for_collecting_and_processing
         public MainWindow() {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

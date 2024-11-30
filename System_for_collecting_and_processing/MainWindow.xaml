@@ -5,8 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:System_for_collecting_and_processing"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Прогнозист" Height="500" Width="800">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Сборщик данных" Margin="1,0,-2,1">
+                <Grid Background="#FFE5E5E5" Height="445">
+                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="32,0,32,100"/>
+                    <Button Content="Найти" HorizontalAlignment="Left" Margin="673,379,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click" Height="28"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="54,385,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Margin="229,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="23"/>
+                    <Label Content="Город" HorizontalAlignment="Left" Margin="32,358,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Номер дома" HorizontalAlignment="Left" Margin="190,358,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Margin="397,383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Height="23"/>
+                    <Label Content="Номер счетчика" HorizontalAlignment="Center" Margin="0,357,0,0" VerticalAlignment="Top"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="536,383,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Дата показаний" HorizontalAlignment="Left" Margin="499,357,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Обработка" Margin="4,0,-4,0">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="51*"/>
+                        <ColumnDefinition Width="743*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="364,29,37,187" Grid.Column="1"/>
+                    <Image HorizontalAlignment="Left" Height="234" Margin="44,29,0,0" VerticalAlignment="Top" Width="340" Source="/6.7.C1.Image.05a.png" Grid.ColumnSpan="2"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="3,307,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox HorizontalAlignment="Left" Margin="3,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="23" Grid.Column="1"/>
+                    <Label Content="Город" HorizontalAlignment="Left" Margin="3,281,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="Номер дома" HorizontalAlignment="Left" Margin="3,339,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox HorizontalAlignment="Left" Margin="243,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Height="22" Grid.Column="1"/>
+                    <Label Content="Номер счетчика" HorizontalAlignment="Left" Margin="188,281,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Button Grid.Column="1" Content="Найти" HorizontalAlignment="Left" Margin="428,307,0,0" VerticalAlignment="Top" Height="41" Width="107"/>
+                    <Button Grid.Column="1" Content="Составить график" HorizontalAlignment="Left" Margin="573,307,0,0" VerticalAlignment="Top" Height="41" Width="107"/>
+                    <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="158,365,0,0" VerticalAlignment="Top" Width="117"/>
+                    <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="322,365,0,0" VerticalAlignment="Top" Width="118"/>
+                    <Label Grid.Column="1" Content="С " HorizontalAlignment="Left" Margin="132,363,0,0" VerticalAlignment="Top"/>
+                    <Label Grid.Column="1" Content="По" HorizontalAlignment="Left" Margin="291,363,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Height="26" Header="Прогноз" VerticalAlignment="Center" Margin="5,0,-7,0">
+                <Grid Background="#FFE5E5E5">
+                    <Image HorizontalAlignment="Left" Height="234" Margin="38,27,0,0" VerticalAlignment="Top" Width="340" Source="/6.7.C1.Image.05a.png"/>
+                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="417,27,35,189"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="54,307,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Margin="54,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="23"/>
+                    <Label Content="Город" HorizontalAlignment="Left" Margin="54,281,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Номер дома" HorizontalAlignment="Left" Margin="54,339,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Margin="270,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Height="22"/>
+                    <Label Content="Номер счетчика" HorizontalAlignment="Left" Margin="220,281,0,0" VerticalAlignment="Top"/>
+                    <Button Content="Спрогнозировать" HorizontalAlignment="Left" Margin="456,286,0,0" VerticalAlignment="Top" Height="42" Width="107"/>
+                    <Button Content="Составить график" HorizontalAlignment="Left" Margin="604,286,0,0" VerticalAlignment="Top" Height="43" Width="107"/>
+                    <TextBox HorizontalAlignment="Left" Margin="201,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Height="23"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="201,403,0,0" VerticalAlignment="Top" Width="107"/>
+                    <Label Content="Цена за газ" HorizontalAlignment="Left" Margin="182,350,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Margin="327,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Height="23"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="327,403,0,0" VerticalAlignment="Top" Width="107"/>
+                    <Label Content="Цена за воду" HorizontalAlignment="Left" Margin="308,350,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Margin="456,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" Height="23"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="456,403,0,0" VerticalAlignment="Top" Width="107"/>
+                    <Label Content="Цена за электричество" HorizontalAlignment="Left" Margin="437,350,0,0" VerticalAlignment="Top" RenderTransformOrigin="8.745,1.527"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
