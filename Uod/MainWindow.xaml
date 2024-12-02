@@ -1,0 +1,29 @@
+﻿<Window x:Class="Uod.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
+        xmlns:local="clr-namespace:Uod"
+        mc:Ignorable="d"
+        Title="Прогнозист" Height="462" Width="800" Background="CadetBlue">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="739*"/>
+        </Grid.ColumnDefinitions>
+        <ScottPlot:WpfPlot x:Name="WpfPlot1" Margin="30,31,36,72" Grid.ColumnSpan="2" >
+            <UIElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </UIElement.RenderTransform>
+        </ScottPlot:WpfPlot>
+        <Button Content="Загрузить датасеты" HorizontalAlignment="Left" Margin="127,389,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1" Height="35" Width="113"/>
+        <Button Content="Получить результат" HorizontalAlignment="Left" Margin="395,389,0,0" VerticalAlignment="Top" Grid.Column="1" Click="Button_Click_1" Height="35" Width="123"/>
+
+    </Grid>
+</Window>
